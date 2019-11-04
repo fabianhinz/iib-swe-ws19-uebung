@@ -1,7 +1,7 @@
 import { Box, Grid } from '@material-ui/core'
 import React from 'react'
 
-import Joke from './Joke'
+import Joke from './Joke/Joke'
 import { Joke as JokeType, JokesDispatch } from './JokesReducer'
 
 interface JokesProps extends JokesDispatch {
