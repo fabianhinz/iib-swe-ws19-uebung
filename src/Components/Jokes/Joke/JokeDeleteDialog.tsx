@@ -14,6 +14,9 @@ interface Props {
     onDeleteAbort: () => void
 }
 
+/*
+ * Stateless component, die einzig und allein über Props kommuniziert
+ */
 export const JokeDeleteDialog = ({ open, onDeleteConfirme, onDeleteAbort }: Props) => (
     <Dialog open={open} onClose={onDeleteAbort}>
         <DialogTitle>Are you sure?</DialogTitle>

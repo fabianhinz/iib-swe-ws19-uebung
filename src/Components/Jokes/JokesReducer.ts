@@ -1,7 +1,11 @@
 import { Dispatch, Reducer, useReducer } from 'react'
 
+/*
+ * Export eines Typs
+ */
 export interface Joke {
     value: string
+    created: Date
     likes: number
     id: number
     skeleton: boolean
@@ -11,6 +15,9 @@ interface State {
     jokes: Joke[]
 }
 
+/*
+ * Ein Objekt vom Typ 'Action' kann eine der drei Typdefinitionen annehmen
+ */
 type Action =
     | {
           type: 'addJoke'
@@ -25,10 +32,18 @@ type Action =
           id: number
       }
 
+/*
+ * Den generischen Typ Dispatch<T> durch den eigenen Typ 'Action' spezifizieren
+ */
 export interface JokesDispatch {
     dispatch: Dispatch<Action>
 }
 
+/*
+ * Die Signatur eines Reducers von React sieht wie folgt aus:
+ * type Reducer<S, A> = (prevState: S, action: A) => S;
+ * Es gilt daher immer eine Funktion mit zwei Parametern zu schreiben
+ */
 const reducer: Reducer<State, Action> = (state, action) => {
     switch (action.type) {
         case 'addJoke': {
@@ -57,4 +72,7 @@ const initialState: State = {
 }
 
 const useJokesReducer = () => useReducer(reducer, initialState)
+/*
+ * Default Export des useJokesReducer hook für bestmögliche Kapselung
+ */
 export default useJokesReducer
