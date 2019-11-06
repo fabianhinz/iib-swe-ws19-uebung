@@ -28,7 +28,11 @@ export const JokesButton = ({ dispatch }: JokesDispatch) => {
      */
     useEffect(() => {
         if (loadingJoke) {
-            enqueueSnackbar('Loading new joke', { key: LOADING_JOKE_KEY, variant: 'info' })
+            enqueueSnackbar('Loading new joke', {
+                key: LOADING_JOKE_KEY,
+                variant: 'info',
+                persist: true,
+            })
         } else {
             closeSnackbar(LOADING_JOKE_KEY)
         }
