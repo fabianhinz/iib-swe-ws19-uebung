@@ -11,6 +11,7 @@ import Jokes from './Components/Jokes/Jokes'
 import JokesButton from './Components/Jokes/JokesButton'
 import JokesHeader from './Components/Jokes/JokesHeader'
 import useJokesReducer from './Components/Jokes/JokesReducer'
+import LoginButton from './Components/LoginButton'
 
 /*
  * Erstellung von eigenen styles. makeStyles kann sowohl von @material-ui/core
@@ -40,6 +41,7 @@ export const App = () => {
         <Container maxWidth="md" className={classes.marginTop}>
             <JokesHeader />
             <JokesButton dispatch={dispatch} />
+            <LoginButton />
             <Jokes dispatch={dispatch} jokes={state.jokes} />
         </Container>
     )

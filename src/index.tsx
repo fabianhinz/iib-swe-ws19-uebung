@@ -15,6 +15,7 @@ import { render } from 'react-dom'
  * Named Export aus der Datei App.tsx
  */
 import { App } from './App'
+import AuthProvider from './Provider/AuthProvider'
 
 /*
  * <>...</> ist gleichbedeutend mit <React.Fragment>...</React.Fragment>
@@ -25,7 +26,9 @@ render(
     <>
         <CssBaseline />
         <SnackbarProvider>
-            <App />
+            <AuthProvider>
+                <App />
+            </AuthProvider>
         </SnackbarProvider>
     </>,
     /*
